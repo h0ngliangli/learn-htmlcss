@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :theme="appStore.theme">
     <v-toolbar>
       <v-spacer />
       <!-- hide-details 隐藏hint，可以使得text input与
@@ -13,12 +13,14 @@
         hide-details 
       />
       <v-spacer />
-      <v-btn icon="mdi-home"></v-btn>
+      <v-btn icon="mdi-lightbulb" @click="appStore.funcToggleTheme"></v-btn>
     </v-toolbar>
     <router-view />
   </v-app>
 </template>
 
 <script setup>
-//
+import { useAppStore } from '@/stores/app'
+const appStore = useAppStore()
+
 </script>
